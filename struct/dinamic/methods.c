@@ -3,8 +3,6 @@
 #include <string.h>
 #include "include/struct.h"
 
-#define SIZE_ARRAY  sizeof(*array_of_struct)/sizeof(array_of_struct[0])
-
 int AddSubscriber(struct SubscriberList *array_of_struct, int size) {
   array_of_struct = realloc(array_of_struct, size);
   if(array_of_struct!=NULL) {

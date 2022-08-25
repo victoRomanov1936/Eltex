@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "include/struct.h"
 
-
 int main(void) {
   int size =0;
   struct SubscriberList *array_of_subscriber = malloc(size * sizeof(struct SubscriberList));

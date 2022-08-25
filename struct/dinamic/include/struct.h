@@ -15,5 +15,5 @@ void DeleteSubscriber(struct SubscriberList *array_of_struct,int index, int *siz
 void DisplaySubscriber(struct SubscriberList *array_of_struct, int size);
 int menu(int* menu_item);
 void ShowOneSubscriber(struct SubscriberList *array_of_struct, int index);
-void CleanStructur(struct SubscriberList *array_of_struct);
+
 
