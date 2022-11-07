@@ -156,7 +156,6 @@ int main() {
 		pthread_mutex_init(&(param[i].mutex), NULL);
 		param[i].status = 1;
 		param[i].port = port_server;
-		//printf("port %d - status %d\n",param[i].port, param[i].status);
 	}
 
 	pthread_create(&threads_servers[0], NULL, ThreadServerMain, &param);
