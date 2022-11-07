@@ -139,10 +139,7 @@ void *ThreadServerMain(void *args) {
 
 int main() {
 	arg param[SERVERS_NUM+1];
-	
-
 	pthread_t threads_servers[SERVERS_NUM + 1];
-
 	int *s;
 	short port_server = FIRST_PORT;
 	  
