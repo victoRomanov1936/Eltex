@@ -21,27 +21,30 @@ int main() {
 	short source_port = htons(7777);
 	short destination_port = htons(55555);
 	short lenght_pack = htons(264);
-	short sum = htons(65307);
 	
-	unsigned char sum_p[sizeof(short) + 1];
 	unsigned char lenght[sizeof(short) + 1];
 	unsigned char sourse_p[sizeof(short) + 1];
 	unsigned char destination_p[sizeof(short) + 1];
 
 	char *lng = &lenght_pack;
-	char *sm = &sum;
 	char *sp = &source_port;
 	char *dp = &destination_port;
 
 	fbytech(sp, sourse_p);
 	fbytech(dp, destination_p);
 	fbytech(lng, lenght);
-	fbytech(sm, sum_p);
+	printf("\n");
 
-	sprintf(buf,"%s%s%s%s%s",sourse_p, destination_p, lenght, sum_p, "C:HELLO WORLD\n");
-	
-	for(int i = strlen(buf); i< 264; i++) {
+	for(int i = 0; i< 264; i++) {
 		 buf[i] = 0;
+	}
+
+	sprintf(buf,"%s%s%s%c%c%s",sourse_p, destination_p, lenght, 1,1,"C:HELLO WORLD\n");
+	buf[6]=0;
+	buf[7]=0;
+
+	for(int i = 0; i< strlen(buf); i++) {
+		 printf("%x ", buf[i]);
 	}
 
 	struct sockaddr_in serv;
